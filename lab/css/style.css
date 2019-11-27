@@ -1,0 +1,32 @@
+head {
+    color: midnightblue;
+    background-color: lightslategray;
+}
+body{
+    margin: 5px;
+    padding: 5px;
+    font-family: Arial;
+    font-size: 12px;
+    color: darkblue;
+    background-color: floralwhite;
+
+}
+a{
+    text-decoration: underline;
+}
+h{
+    font-family: Arial;
+}
+h1{
+    font-weight: bold;
+    text-align: center;
+}
+p{
+    font-family: sans-serif;
+
+}
+#footer {
+    color: navy;
+    background-color: slategray;
+}
+
