@@ -1,6 +1,3 @@
-#header {
-
-}
 body{
     color: #404040;
     background-color: floralwhite;
@@ -13,7 +10,20 @@ a{
 }
 abbr{
     font-weight: bold;
+    text-decoration: underline;
     display: inline;
+}
+abbr:hover::after {
+    position: absolute;
+    display: block;
+    background: darkgrey;
+    content: attr(title);
+}
+span.deleted{
+    text-decoration-line: line-through;
+}
+span.bold{
+    font-weight: bold;
 }
 h{
 }
@@ -38,6 +48,9 @@ h2{
 }
 p{
     font-family: sans-serif;
+}
+p.copyright{
+    font-family: monospace;
 }
 #article3{
 
