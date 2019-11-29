@@ -2,6 +2,8 @@
   <dictionary name="eegii">
     <words>
       <w>aboutme</w>
+      <w>bodyright</w>
+      <w>mainbody</w>
     </words>
   </dictionary>
 </component>
