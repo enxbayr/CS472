@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <link href="image/heart.gif" type="image/gif" rel="shortcut icon"/>
+    <link href="css/nerdluv.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="logo">
+    <img alt="" src="image/nerdluv.png">
+    <p>where meek geeks meet</p>
+</div>
+<form action="#" method="POST">
+    <fieldset>
+        <legend>New User Sign Up:</legend>
+        <span>
+                <label for="name"> Name: </label>
+                <input id="name" name="name" size="16" type="text">
+            </span>
+        <span>
+                <label> Gender: </label>
+                <input id="Male" name="gender" type="radio" value="Male"> <label class="NormalLabel"
+                                                                                 for="Male">Male</label>
+                <input checked id="Female" name="gender" type="radio" value="Female"> <label class="NormalLabel"
+                                                                                             for="Female">Female</label>
+            </span>
+        <span>
+                <label for="Age"> Age: </label>
+                <input id="Age" name="age" pattern="[0-9]{1,2}" size="6" type="text">
+            </span>
+        <span>
+                <label for="pType"> Personality type: </label>
+                <input id="pType" name="pType" pattern="[a-zA-Z]{1,4}" size="6" type="text">
+                (<a href="http://www.humanmetrics.com/cgi-win/jtypes2.asp">Don't know your type?</a>)
+            </span>
+        <span>
+                <label for="FOS"> Favorite OS: </label>
+                <select id="FOS" name="fOS">
+                    <option selected value="Windows">Windows</option>
+                    <option value="Mac">Mac OS X</option>
+                    <option value="Linux">Linux</option>
+                </select>
+            </span>
+        <span>
+                <label for="sAge"> Seeking age: </label>
+                <input id="sAge" pattern="[0-9]{1,2}" placeholder="min" size="6" type="text">
+                to
+                <input pattern="[0-9]{1,2}" placeholder="max" size="6" type="text">
+            </span>
+        <input type="submit" value="Sign Up">
+
+    </fieldset>
+</form>
+<div class="footer">
+    <p>This page is for single nerds to meet and date each other! Type in your personal information and wair for
+        nerdy luv to begin!</p>
+    <p>Thank you for using our site.</p>
+    <br>
+    <p>Result and page (C) Copyright Nerdluv Inc.</p>
+    <div><a class="BackToHome" href="#"> <img alt="" src="image/back.gif">
+        <p>Back to front page</p>
+    </a></div>
+    <div class="validators">
+        <a href="http://validator.w3.org/check/referer">
+            <img alt="html validator" src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png">
+        </a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+            <img alt="html validator" src="http://mumstudents.org/cs472/2014-09/images/w3c-css.png">
+        </a>
+    </div>
+</div>
+</body>
+
+</html>
