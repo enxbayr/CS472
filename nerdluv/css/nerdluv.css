@@ -23,7 +23,9 @@ a:hover {
 a img {
     border: none;
 }
-
+.BackToHome{
+    display: flex;
+}
 body {
     background-color: white;
     padding-left: 1em;
