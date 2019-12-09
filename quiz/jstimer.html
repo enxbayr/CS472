@@ -9,7 +9,8 @@
     setTimeout(booyah, 2000);<br>
     setTimeout(booyah(), 2000);<br>
 <blockquote>
-    <span style="font-weight: bold">ANSWER: </span> The difference is that
+    <span style="font-weight: bold">ANSWER: </span> #1: Wait for 2000ms then calling the function
+    #2: calling the function immediately
 </blockquote>
 </p>
 <p>
@@ -22,7 +23,7 @@ var y = myfunc;<br>
 alert(x);<br>
 alert(y(2,3));<br>
 <blockquote>
-    <span style="font-weight: bold">ANSWER: </span>
+    <span style="font-weight: bold">ANSWER: </span> Both shows "6"
 </blockquote>
 </p>
 <p>
@@ -31,6 +32,13 @@ setTimeout(booyah1, 2000);<br>
 setTimeout(booyah2(), 2000);<br>
 <blockquote>
     <span style="font-weight: bold">ANSWER: </span>
+    var booyah1 = function() {
+    alert("BOOYAH!")
+    }
+
+    var booyah2 = function() {
+    setTimeout(booyah1, 2000);
+    }
 </blockquote>
 </p>
 <p>
@@ -38,6 +46,14 @@ setTimeout(booyah2(), 2000);<br>
 for using it)?<br>
 <blockquote>
     <span style="font-weight: bold">ANSWER: </span>
+    Unobtrusive JavaScript code:
+    • HTML with minimal JavaScript inside
+    • uses the DOM to attach and execute all JavaScript functions
+
+    Application: separation of web site into 3 major categories:
+    • content (HTML) - what is it?
+    • presentation (CSS) - how does it look?
+    • behavior (JavaScript) - how does it respond to user interaction?
 </blockquote>
 </p>
 </body>
