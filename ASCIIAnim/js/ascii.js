@@ -10,7 +10,7 @@ window.onload = function () {
     var selectedSize = selSize.options[selSize.selectedIndex].text;
     var playingAnim;
     var isPlaying = false;
-    var currentFrameID=0;
+    var currentFrameID = 0;
 
     var frameSpeed = 250;
 
@@ -30,41 +30,47 @@ window.onload = function () {
     };
     selAnim.onchange = function () {
         selectedAnim = selAnim.options[selAnim.selectedIndex].text;
-        currentFrameID=0;
+        currentFrameID = 0;
     };
     selSize.onchange = function () {
-        let sizes = {"Tiny": "7pt",
-                    "Small": "10pt",
-                    "Medium": "12pt",
-                    "Large": "16pt",
-                    "Extra Large": "24pt",
-                    "XXL": "32pt"};
+        let sizes = {
+            "Tiny": "7pt",
+            "Small": "10pt",
+            "Medium": "12pt",
+            "Large": "16pt",
+            "Extra Large": "24pt",
+            "XXL": "32pt"
+        };
         selectedSize = selSize.options[selSize.selectedIndex].text;
-        textArea.style.fontSize=sizes[selectedSize];
+        textArea.style.fontSize = sizes[selectedSize];
     };
     chBox.onchange = function () {
         if (chBox.checked == true)
             frameSpeed = 50;
+
         else
             frameSpeed = 250;
-        if(isPlaying==true){
+
+        if (isPlaying == true) {
             stopAnim();
             playAnim();
         }
     };
+
     function setFrame() {
         let frames = ANIMATIONS[selectedAnim].split("=====\n");
         textArea.value = frames[currentFrameID];
-        if(currentFrameID==frames.length-1)
-            currentFrameID=0;
+        if (currentFrameID == frames.length - 1)
+            currentFrameID = 0;
         else
             currentFrameID++;
     }
+
     function playAnim() {
         playingAnim = setInterval(setFrame, frameSpeed);
     }
 
-    function stopAnim(){
+    function stopAnim() {
         clearInterval(playingAnim);
     }
 };
