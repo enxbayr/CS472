@@ -9,7 +9,6 @@ body{
 .header{
     font: bold 16pt sans-serif;
     margin: 0;
-    horiz-align: center;
 }
 #textArea{
     width: 90%;
