@@ -1,38 +1,42 @@
-window.onload = function () {
-    var textArea = document.getElementById("textArea");
-    var btnStart = document.getElementById("btnPCSt");
-    var btnStop = document.getElementById("btnPCSp");
-    var selAnim = document.getElementById("selAnim");
-    var selSize = document.getElementById("selSize");
-    var chBox = document.getElementById("chBox");
+"use strict";
+(function () {
+    let playingAnim;
+    let isPlaying = false;
+    let currentFrameID = 0;
+    let frameSpeed = 250;
+    let selectedAnim;
+    let selectedSize;
+    window.onload = onload;
 
-    var selectedAnim = selAnim.options[selAnim.selectedIndex].text;
-    var selectedSize = selSize.options[selSize.selectedIndex].text;
-    var playingAnim;
-    var isPlaying = false;
-    var currentFrameID = 0;
+    function onload() {
+        document.getElementById('btnPCSt').onclick = play;
+        document.getElementById('btnPCSp').onclick = stop;
+        document.getElementById('selAnim').onchange = selectAnim;
+        document.getElementById('selSize').onchange = selectSize;
+        document.getElementById('chBox').onchange = turboMode;
+        selectedAnim = document.getElementById('selAnim').options[document.getElementById('selAnim').selectedIndex].text;
+        selectedSize = document.getElementById('selSize').options[document.getElementById('selSize').selectedIndex].text;
+    }
 
-    var frameSpeed = 250;
-
-    btnStart.onclick = function () {
-        btnStart.disabled = true;
-        btnStop.disabled = false;
-        selAnim.disabled = true;
+    function play() {
+        document.getElementById('btnPCSt').disabled = true;
+        document.getElementById('btnPCSp').disabled = false;
+        document.getElementById('selAnim').disabled = true;
         isPlaying = true;
         playAnim();
     };
-    btnStop.onclick = function () {
-        btnStart.disabled = false;
-        btnStop.disabled = true;
-        selAnim.disabled = false;
+    function stop() {
+        document.getElementById('btnPCSt').disabled = false;
+        document.getElementById('btnPCSp').disabled = true;
+        document.getElementById('selAnim').disabled = false;
         isPlaying = false;
         stopAnim();
     };
-    selAnim.onchange = function () {
-        selectedAnim = selAnim.options[selAnim.selectedIndex].text;
+    function selectAnim() {
+        selectedAnim = document.getElementById('selAnim').options[document.getElementById('selAnim').selectedIndex].text;
         currentFrameID = 0;
     };
-    selSize.onchange = function () {
+    function selectSize() {
         let sizes = {
             "Tiny": "7pt",
             "Small": "10pt",
@@ -41,16 +45,14 @@ window.onload = function () {
             "Extra Large": "24pt",
             "XXL": "32pt"
         };
-        selectedSize = selSize.options[selSize.selectedIndex].text;
-        textArea.style.fontSize = sizes[selectedSize];
+        selectedSize = document.getElementById('selSize').options[document.getElementById('selSize').selectedIndex].text;
+        document.getElementById('textArea').style.fontSize = sizes[selectedSize];
     };
-    chBox.onchange = function () {
-        if (chBox.checked == true)
+    function turboMode() {
+        if (document.getElementById('chBox').checked == true)
             frameSpeed = 50;
-
         else
             frameSpeed = 250;
-
         if (isPlaying == true) {
             stopAnim();
             playAnim();
@@ -59,7 +61,7 @@ window.onload = function () {
 
     function setFrame() {
         let frames = ANIMATIONS[selectedAnim].split("=====\n");
-        textArea.value = frames[currentFrameID];
+        document.getElementById('textArea').value = frames[currentFrameID];
         if (currentFrameID == frames.length - 1)
             currentFrameID = 0;
         else
@@ -73,4 +75,4 @@ window.onload = function () {
     function stopAnim() {
         clearInterval(playingAnim);
     }
-};
+})();
