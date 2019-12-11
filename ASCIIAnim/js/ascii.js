@@ -1,5 +1,5 @@
-"use strict";
 (function () {
+    "use strict";
     let playingAnim;
     let isPlaying = false;
     let currentFrameID = 0;
