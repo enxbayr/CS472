@@ -22,11 +22,10 @@
         $('#newaccount').val("");
         $('#newdeposit').val("");
     };
-
+    $('#btnRudy').click(function(){
+        setTimeout(function(){alert("Hello World")},5000);
+    });
     window.onload = function () {
         $('#btnNew').click(createAcc);
-        $('#btnRudy').click(function(){
-            setTimeout(function(){alert("Hello World")},5000);
-        });
     }
 })();
